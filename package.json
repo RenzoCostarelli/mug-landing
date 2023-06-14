@@ -9,14 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.74.14",
+    "@react-three/fiber": "^8.13.3",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
+    "leva": "^0.9.35",
     "next": "13.4.5",
+    "r3f-perf": "^7.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.63.3",
+    "three": "^0.153.0",
     "typescript": "5.1.3"
   }
 }

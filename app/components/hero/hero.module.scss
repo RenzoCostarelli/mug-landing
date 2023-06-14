@@ -1,0 +1,96 @@
+.hero {
+    height: 100vh;
+    width: 100vw;
+    color: black;
+    position: relative;
+    z-index: 0;
+    .grid {
+        display: grid;
+        height: 100%;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        place-content: center;
+    }
+    .top {
+        display: grid;
+        grid-row: 1;
+        grid-column: span 3;
+        align-content: start;
+    }
+    .bottom {
+        display: grid;
+        grid-row: 3;
+        grid-column: span 3;
+        align-content: end;
+    }
+    .center {
+        display: grid;
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .left {
+        display: grid;
+        grid-column: 1;
+    }
+    .right {
+        display: grid;
+        grid-column: 3;
+    }
+    h1 {
+        font-size: 20vw;
+        font-weight: bold;
+        color: white;
+        grid-column: 2;
+    }
+    .circle {
+        svg { 
+            position: absolute;
+            right: 0; 
+            bottom: 0;
+            height: 240px;
+            animation-name: rotate;
+            animation-duration: 50s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            font-weight: bold;
+          }
+    }
+    .rotate90 {
+        transform: rotate(90deg);
+        transform-origin: left;
+    }
+    .left_text {
+        transform: translate(1rem, -2rem);
+    }
+    .right_text {
+        transform: translate(-1rem, 1rem);
+    }
+}
+
+.gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0); }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

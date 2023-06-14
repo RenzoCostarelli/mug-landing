@@ -1,8 +1,23 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.scss'
+import Hero from './components/hero'
 
 export default function Home() {
-  return (
+  return (<>
+    <header>
+      <Hero />
+    </header>
+    {/* AGREGAR SECCION DOS COLUMNAS IMAGEN A LA DERECHA, 
+    TEXTO A LA IZQUIERDA CON SCROLL, LA IMAGEN QUEDA FIJA 
+    HASTA QUE TERMINA EL SCROLL */}
+
+    {/* MARQUESINA DE TEXTO INFINITO */}
+
+    {/* VIDEO */}
+
+    {/* SECCION IMAGEN IZQ TEXTO DER */}
+    {/* SECCION IMAGEN DER TEXTO IZQ */}
+    {/* SECCION IMAGEN IZQ TEXTO DER */}
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
@@ -91,5 +106,6 @@ export default function Home() {
         </a>
       </div>
     </main>
+    </>
   )
 }
