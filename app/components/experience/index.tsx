@@ -1,41 +1,63 @@
-import { useMatcapTexture, Center, Text3D, OrbitControls, Environment } from '@react-three/drei'
+import { useMatcapTexture, Center, Text, Text3D, OrbitControls, Environment, Float, RoundedBox, Sphere, Tube, Cylinder, Cloud, MeshWobbleMaterial, MeshDistortMaterial, useGLTF } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
+import { EffectComposer, Glitch, Noise, Bloom } from '@react-three/postprocessing'
+import { CuboidCollider, Physics, RigidBody, RigidBodyTypeString } from '@react-three/rapier'
+
+
+import { useRef, useState } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
+import { Model } from './Mug'
+import Gradient from './gradient'
+import Box from './box'
+import CylinderShape from './cylinder'
+import { Botella } from './Botella'
+import Bananas from './botellas'
 
 export default function Experience() {
-
-    const materialProps = useControls({
-        thickness: { value: 5, min: 0, max: 20 },
-        roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-        clearcoat: { value: 1, min: 0, max: 1, step: 0.1 },
-        clearcoatRoughness: { value: 0, min: 0, max: 1, step: 0.1 },
-        transmission: { value: 1, min: 0.9, max: 1, step: 0.01 },
-        ior: { value: 1.25, min: 1, max: 2.3, step: 0.05 },
-        envMapIntensity: { value: 25, min: 0, max: 100, step: 1 },
-        color: '#ffffff',
-        attenuationTint: '#ffe79e',
-        attenuationDistance: { value: 0.40, min: 0, max: 1 }
-      })
-      const envProps = useControls({ background: false })
-      const [ matcapTexture ] = useMatcapTexture('7B5254_E9DCC7_B19986_C8AC91', 256)
-    return <>
-        <Perf position="top-left" />
-        <OrbitControls makeDefault />
+      
+       return <>
+        {/* <Perf position="top-left" /> */}
+        <OrbitControls makeDefault enableZoom={false}/>
+        <ambientLight intensity={0.4} /> 
         <Center>
-            <Text3D font="./fonts/helvetiker_regular.typeface.json">
-                MUG
-                {/* <meshMatcapMaterial matcap={ matcapTexture } /> */}
-                <meshPhysicalMaterial {...materialProps} />
-            </Text3D>
-            <Environment {...envProps} files="./adams_place_bridge_1k.hdr" />
+            <Float
+            speed={1} // Animation speed, defaults to 1
+            rotationIntensity={0.1} // XYZ rotation intensity, defaults to 1
+            floatIntensity={0.1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            >
+           
+            </Float>
+              <Model/>
         </Center>
-            <group rotation={[0, 0, Math.PI / 4]}>
-                <mesh position={[0, 0, -10]} material-color="hotpink">
-                <planeGeometry args={[20, 2]} />
-                </mesh>
-                <mesh position={[0, 0, -10]} material-color="hotpink">
-                <planeGeometry args={[2, 20]} />
-                </mesh>
-            </group>
+        <Gradient />
+        <Center>
+          <Bananas />
+        </Center>
+        {/* <Cloud
+          opacity={0.5}
+          speed={0.1} // Rotation speed
+          width={1} // Width of the full cloud
+          depth={1} // Z-dir depth
+          segments={2} // Number of particles
+          position={[0, -1, -5]}
+          color={'#ffffff'}>
+          </Cloud> */}
+        <Float
+            speed={0.5} // Animation speed, defaults to 1
+            rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+            floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            >
+              {/* <Botella /> */}
+              <Physics>
+                <RigidBody type="fixed">
+                  {/* <Box /> */}
+                </RigidBody>
+              <RigidBody type="fixed">
+                {/* <CylinderShape /> */}
+              </RigidBody>
+              </Physics>
+        </Float>
+        
     </>
 }

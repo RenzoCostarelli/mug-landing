@@ -1,9 +1,14 @@
+.header_container {
+  overflow: hidden;
+}
+
 .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
+  overflow: hidden;
   min-height: 100vh;
 }
 

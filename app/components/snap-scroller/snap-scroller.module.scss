@@ -1,0 +1,29 @@
+.vertical_scroller {
+    position: relative;
+    display: flex;
+    .cols_container {
+        display: flex;
+        .column {
+            width: 50%;
+            padding-bottom: 10rem;
+            p {
+                font-size: 1.5rem;
+                text-align: left;
+                margin-block: 25rem;
+            }
+        }
+        .snap_column {
+            width: 50%;
+            padding: 5rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .box {
+            width: 400px;
+            aspect-ratio: 1 / 1 ;
+            border-radius: 0.5rem;
+            background-color: pink;
+        }
+    }
+}

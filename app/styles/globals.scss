@@ -21,16 +21,10 @@ html {
   // font-weight: bolder;
   font-family: $ff-primary;
   text-align: center;
-  color: var(--white);
+  color: var(--black);
   scrollbar-width: thin;
 
-  background: rgb(14, 11, 40);
-  background: linear-gradient(
-    180deg,
-    var(--clr-neutral-900) 0%,
-    rgb(17 20 60) 50%,
-    rgb(14, 11, 40) 100%
-  );
+  background: rgb(255, 255, 255);
 
   &.nav {
     overflow: hidden;
