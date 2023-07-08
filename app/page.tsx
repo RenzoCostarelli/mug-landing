@@ -4,7 +4,6 @@ import Hero from './components/hero'
 import SnapScroller from './components/snap-scroller'
 import VideoSection from './components/video'
 import SplitMarquee from './components/split-marquee'
-
 export default function Home() {
   return (<>
     <header className={styles.header_container}>

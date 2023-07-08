@@ -15,24 +15,26 @@ import { Botella } from './Botella'
 import Bananas from './botellas'
 
 export default function Experience() {
-      
+       const groupRef = useRef<any>(null)
+       // pasar esto a un hook agregar suavidad al movimiento
+       useFrame(state => {
+        // if(groupRef.current) {
+        //   groupRef.current.rotation.set(state.mouse.y * 0.2, state.mouse.x * 0.2, 0)
+        // }
+      })
        return <>
         {/* <Perf position="top-left" /> */}
         <OrbitControls makeDefault enableZoom={false}/>
         <ambientLight intensity={0.4} /> 
-        <Center>
-            <Float
-            speed={1} // Animation speed, defaults to 1
-            rotationIntensity={0.1} // XYZ rotation intensity, defaults to 1
-            floatIntensity={0.1} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-            >
-           
-            </Float>
-              <Model/>
-        </Center>
         <Gradient />
         <Center>
-          <Bananas />
+        <Physics gravity={ [ 0, 1.6, 0 ] }>
+            <group ref={groupRef}>
+                <Model/>
+            </group>
+            {/* <Bananas /> */}
+
+          </Physics>
         </Center>
         {/* <Cloud
           opacity={0.5}
@@ -40,7 +42,7 @@ export default function Experience() {
           width={1} // Width of the full cloud
           depth={1} // Z-dir depth
           segments={2} // Number of particles
-          position={[0, -1, -5]}
+          position={[0, 0, 0]}
           color={'#ffffff'}>
           </Cloud> */}
         <Float

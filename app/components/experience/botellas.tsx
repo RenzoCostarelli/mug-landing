@@ -7,6 +7,7 @@ import { useGLTF, Detailed, Environment } from '@react-three/drei'
 // https://github.com/vanruesc/postprocessing
 import { EffectComposer, DepthOfField } from '@react-three/postprocessing'
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader'
+import { Physics, RigidBody } from '@react-three/rapier'
 
 type ModelProps = {
     index: number;
@@ -56,7 +57,7 @@ function Banana({ index, z, speed }: ModelProps) {
     
     if (ref.current ) {
 
-        if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.x * width, (data.y += dt * speed), -z)
+        // if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.x * width, (data.y += dt * speed), -z)
         // Rotate the object around
         ref.current.rotation.set((data.rX += dt / data.spin), Math.sin(index * 1000 + state.clock.elapsedTime / 10) * Math.PI, (data.rZ += dt / data.spin))
         // If they're too far up, set them back to the bottom
@@ -68,13 +69,16 @@ function Banana({ index, z, speed }: ModelProps) {
   // we don't need high resolution for objects in the distance. The model contains 3 decimated meshes ...
   return (      
     // <mesh geometry={nodes.Ramazzotti_Atlas_0.geometry} scale={0.1} ref={ref} material-emissive="#f2d14e" />
-    <mesh geometry={nodes.Ramazzotti_Atlas_0.geometry} scale={0.03} ref={ref} >
-        <meshStandardMaterial color="#23a6d5"/> 
-    </mesh> 
+    
+      <RigidBody>
+          <mesh geometry={nodes.Ramazzotti_Atlas_0.geometry} scale={0.03} ref={ref} >
+              <meshStandardMaterial color="#23a6d5"/> 
+          </mesh>         
+      </RigidBody>
   )
 }
 
-export default function Bananas({ speed = 0.2, count = 20, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
+export default function Bananas({ speed = 0.2, count = 50, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 2)) }) {
   return <>
     {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
     {Array.from({ length: count }, (_, i) => <Banana key={i} index={i} z={Math.round(easing(i / count) * depth)} speed={speed} /> /* prettier-ignore */)}

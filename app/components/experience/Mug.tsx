@@ -8,6 +8,8 @@ import React, { useRef } from 'react'
 import { Center, Environment, useGLTF, useMatcapTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useControls } from 'leva'
+import { Physics, RigidBody } from '@react-three/rapier'
+import { useFrame } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,6 +21,8 @@ type GLTFResult = GLTF & {
 }
 
 export function Model(props: JSX.IntrinsicElements['group']) {
+  const logoRef = useRef<any>(null)
+
   // const materialProps = useControls({
       //   thickness: { value: 4.6, min: 0, max: 20 },
       //   roughness: { value: 0.6, min: 0, max: 1, step: 0.1 },
@@ -54,9 +58,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   return (
     <Center>
       <group {...props} dispose={null} position={[0, 0, 0]}>
-        <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7}>
-          <meshPhysicalMaterial {...materialProps} />
-        </mesh>
+        
+            <RigidBody type="fixed">
+              <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
+                <meshPhysicalMaterial {...materialProps} />
+              </mesh>              
+            </RigidBody>
+        
         <Environment {...envProps} files="./adams_place_bridge_1k.hdr" />
       </group>
     </Center>

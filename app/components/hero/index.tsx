@@ -1,11 +1,11 @@
 'use client'
-
 import { DepthOfField, EffectComposer } from '@react-three/postprocessing'
 import Experience from '../experience'
 import s from './hero.module.scss'
 import { Canvas } from '@react-three/fiber'
 
 export default function Hero() {
+    
     return <>
        {/* VIDEO O GRADIENTE ANIMADO DE FONDO */}
         <div className={s.hero}>
@@ -17,13 +17,13 @@ export default function Hero() {
                         fov: 45,
                         near: 0.1,  
                         far: 100,
-                        position: [ 0, 0, 3 ]
+                        position: [ 0, 0, 6 ]
                     } }
                 >
                     <Experience />
-                    <EffectComposer multisampling={0}>
+                    {/* <EffectComposer multisampling={0}>
                         <DepthOfField target={[0, 0, 4]} focalLength={0.4} bokehScale={10} height={700} />
-                    </EffectComposer>
+                    </EffectComposer> */}
                 </Canvas>
             </div>       
             <div className={s.grid}>
