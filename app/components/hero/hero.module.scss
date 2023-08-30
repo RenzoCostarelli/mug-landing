@@ -11,80 +11,6 @@
         height: 100%;
         width: 100%;
     }
-    .grid {
-        display: grid;
-        height: 100%;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        place-content: center;
-    }
-    .top {
-        display: grid;
-        grid-row: 1;
-        grid-column: span 3;
-        align-content: start;
-    }
-    .bottom {
-        display: grid;
-        grid-row: 3;
-        grid-column: span 3;
-        align-content: end;
-    }
-    .center {
-        display: grid;
-        grid-column: 2;
-        grid-row: 2;
-    }
-    .left {
-        display: grid;
-        grid-column: 1;
-    }
-    .right {
-        display: grid;
-        grid-column: 3;
-    }
-    h1 {
-        font-size: 20vw;
-        font-weight: bold;
-        color: white;
-        grid-column: 2;
-    }
-    .circle {
-        svg { 
-            position: absolute;
-            right: 0; 
-            bottom: 0;
-            height: 240px;
-            // animation-name: rotate;
-            animation-duration: 50s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            font-weight: bold;
-          }
-    }
-    .rotate90 {
-        transform: rotate(90deg);
-        transform-origin: left;
-    }
-    .left_text {
-        transform: translate(1rem, -2rem);
-        span{
-            position: relative;
-            &::after {
-                content: "";
-                width: 300px;
-                background-color: black;
-                height: 1px;
-                position: absolute;
-                bottom: 3px;
-                right: -180%;
-            }
-        }
-    }
-    .right_text {
-        transform: translate(-1rem, 1rem);
-    }
 }
 
 // .gradient {
@@ -97,10 +23,6 @@
 //     z-index: -1;
 // }
 
-@keyframes rotate {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0); }
-}
 
 @keyframes gradient {
 	0% {

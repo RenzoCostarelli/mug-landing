@@ -59,7 +59,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
     <Center>
       <group {...props} dispose={null} position={[0, 0, 0]}>
         
-            <RigidBody type="fixed">
+            <RigidBody>
               <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
                 <meshPhysicalMaterial {...materialProps} />
               </mesh>              

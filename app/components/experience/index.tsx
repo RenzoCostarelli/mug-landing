@@ -28,12 +28,12 @@ export default function Experience() {
         <ambientLight intensity={0.4} /> 
         <Gradient />
         <Center>
-        <Physics gravity={ [ 0, 1.6, 0 ] }>
+          <Physics gravity={ [ 0, 0, 0 ] }>
             <group ref={groupRef}>
                 <Model/>
             </group>
-            {/* <Bananas /> */}
 
+            <Bananas />
           </Physics>
         </Center>
         {/* <Cloud
