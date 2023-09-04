@@ -5,58 +5,64 @@ import Image from 'next/image'
 const dummyData: Band[] = [
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/groove_master',
-      title: 'Groove Master',
+      link_url: 'https://open.spotify.com/artist/2MGzb68P8ec7JFuzkwi0sJ',
+      title: 'Chokenbici',
       description: 'Feel the funk and groove with the master!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/funkadelic_beats',
-      title: 'Funkadelic Beats',
+      link_url: 'https://open.spotify.com/artist/3yF4Lj2Sl3QkKQNQwtYya6',
+      title: 'Caliope Family',
       description: 'Get ready for some mind-bending funky beats!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/groovy_soulz',
-      title: 'Groovy Soulz',
+      link_url: 'https://open.spotify.com/artist/1jPpQw1FGkiNBkYEPE3WRY',
+      title: 'Cortito y Funky',
       description: 'A fusion of soul and groove that moves your soul!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/groove_masters',
-      title: 'The Groove Masters',
+      link_url: 'https://open.spotify.com/artist/2h61fAPumECGmmEmJPJkj1',
+      title: 'Groovin’ Bohemia',
       description: 'These masters of groove will keep you dancing all night.',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/funky_fusion',
-      title: 'Funky Fusion',
+      link_url: 'https://open.spotify.com/artist/0UDzdnndviQU4dtzQ47zqz',
+      title: 'Joako22',
       description: 'Experience the perfect fusion of funk and grooves!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/groove_machine',
-      title: 'Groove Machine',
+      link_url: 'https://open.spotify.com/artist/5Xn7CUcKrK1h5id15B7NQc',
+      title: 'Latelonius',
       description: 'Get on the dance floor and let the machine groove you!',
     },
     {
       img_url: '/images/mug1.jpg',
       link_url: 'https://example.com/funk_revolution',
-      title: 'Funk Revolution',
+      title: 'La N.N',
       description: 'Join the revolution of funky rhythms and moves!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/groove_sensation',
-      title: 'Groove Sensation',
+      link_url: 'https://open.spotify.com/artist/1TcJ950NL1latyKZLfHaI1',
+      title: 'Suave Lomito',
       description: 'A sensation of groove that electrifies the crowd!',
     },
     {
       img_url: '/images/mug1.jpg',
-      link_url: 'https://example.com/funky_vibes',
-      title: 'Funky Vibes',
+      link_url: 'https://soundcloud.com/triganigga-dj',
+      title: 'Triga Nigga',
       description: 'Vibes so funky, they`ll make you move instantly!',
     },
+    {
+      img_url: '/images/mug1.jpg',
+      link_url: 'https://open.spotify.com/artist/65HV0X2MrHeNzgCEfruD3Y',
+      title: 'Bifes con Ensalada',
+      description: 'Vibes so funky, they`ll make you move instantly!',
+    }
   ];
 
   function BandsCards({ bandData }: { bandData: Band }) {
@@ -64,6 +70,9 @@ const dummyData: Band[] = [
   
     return (
       <>
+      <a href={link_url} target='blank'>
+
+      
         <div className={s.card}>
           <div className={s.card_picture}>
             <Image
@@ -93,6 +102,7 @@ const dummyData: Band[] = [
             </div>
           </div>
         </div>
+        </a>
       </>
     );
   }

@@ -8,7 +8,6 @@ import UI from '../ui'
 export default function Hero() {
     
     return <>
-       {/* VIDEO O GRADIENTE ANIMADO DE FONDO */}
         <div className={s.hero}>
             <div className={s.canvas_container}>
                 <Canvas
@@ -22,9 +21,6 @@ export default function Hero() {
                     } }
                 >
                     <Experience />
-                    {/* <EffectComposer multisampling={0}>
-                        <DepthOfField target={[0, 0, 4]} focalLength={0.4} bokehScale={10} height={700} />
-                    </EffectComposer> */}
                 </Canvas>
             </div>       
            

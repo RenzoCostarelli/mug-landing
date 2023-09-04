@@ -57,8 +57,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   const [ matcapTexture ] = useMatcapTexture('7B5254_E9DCC7_B19986_C8AC91', 256)
   return (
     <Center>
-      <group {...props} dispose={null} position={[0, 0, 0]}>
-        
+      <group {...props} dispose={null} position={[0, 0, 0]}>        
             <RigidBody>
               <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
                 <meshPhysicalMaterial {...materialProps} />
