@@ -65,8 +65,10 @@ export default function SnapScroller () {
                                     }}
                                 />
                             </div>
-                            <h1>Qué es el MUG?</h1>
-                            <p>Red is a color often associated with strong emotions such as passion, love, and anger. It's a bold and attention-grabbing color that can evoke feelings of excitement, warmth, and energy.</p>
+                            <h1>La Unión</h1>
+                            <p>
+                            Al ritmo de la gestión colaborativa, el MUG nace en 2017 como vehículo para expandir y afianzar las fronteras artísticas y profesionales de quienes lo componen. Desde entonces sus más de 40 integrantes se dan un espacio de encuentro constante para compartir diagnósticos y entablar estrategias en conjunto hacia el desarrollo cultural y profesional de la escena local, fomentando el crecimiento para los trabajadores de la cultura, con hincapié en la industria musical. Lejos de la competencia, la unión del colectivo se formaliza en 2021 como Asociación Civil, logrando consolidarse como un agente de cambio en el ecosistema cultural local.
+                            </p>
                         </div>
                         <div className={`${s.desktop_content_section} text_area`}>
                             <div className={`${s.mobile_image}`}>
@@ -80,8 +82,8 @@ export default function SnapScroller () {
                                     }}
                                 />
                             </div>
-                            <h1>Cómo es el MUG?</h1>
-                            <p>Green is a color that is often associated with nature, growth, and harmony. It is a calming and relaxing color that can evoke feelings of balance, stability, and freshness.</p>
+                            <h1>El Movimiento</h1>
+                            <p>Una organización creativa y colaborativa pone al colectivo en movimiento para generar acuerdos y transformarlos en acción. De funcionamiento asambleario, el MUG abre sus espacios de decisión para que sean representativos, asegurando un diálogo horizontal donde todas las ideas son puestas en valor y logra coordinar espacios de balance para avanzar siempre hacia la acción transformadora.</p>
                         </div>
                         <div className={`${s.desktop_content_section} text_area`}>
                             <div className={`${s.mobile_image}`}>
@@ -95,26 +97,10 @@ export default function SnapScroller () {
                                     }}
                                 />
                             </div>
-                            <h1>Cuando es el MUG?</h1>
-                            <p>Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more delicate shade of red that can evoke feelings of warmth, love, and nurturing.</p>
-                            <p>Pink is a color that is often associated with femininity, romance, and sweetness. It is a softer and more delicate shade of red that can evoke feelings of warmth, love, and nurturing.</p>
-                    </div>
-                        <div className={`${s.desktop_content_section} text_area`}>
-                            <div className={`${s.mobile_image}`}>
-                            <Image
-                                    src="/images/mug4.jpg"
-                                    alt="Mug team"
-                                    fill
-                                    // sizes="100vw"
-                                    style={{
-                                        objectFit: 'cover',
-                                    }}
-                                />
-                            </div>
-                            <h1>Por qué es el MUG?</h1>
-                            <p>Blue is a color that is often associated with calmness, trust, and reliability. It is a peaceful and serene color that can evoke feelings of stability, security, and professionalism.</p>
+                            <h1>El Groove</h1>
+                            <p>Más allá de una estética, el groove como política del cuerpo en movimiento define al colectivo en diversos niveles. Asimismo, lo mantiene en contacto y colaboración con una amplia red de agentes y agitadores culturales que trabajan de manera cercana y comparten las recompensas por los objetivos alcanzados, generando también el marco de interés de una comunidad en constante crecimiento. El MUG es respaldado por un público joven, activo y danzante que deviene en un actor social clave de esta experiencia colaborativa, compartiendo no sólo la dimensión estética del hacer artístico, sino también las formas éticas de desarrollo del colectivo.</p>
                         </div>
-                    </div>
+                  </div>
                 </div>
                 <div className={`${s.snap_column} ${s.right_coolumn}`} ref={snapColumnRef}>
                     <div className={`${s.desktop_photos}`}>
