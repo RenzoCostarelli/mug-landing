@@ -1,8 +1,13 @@
+@import '../../styles/functions';
 .ui_container {
     position: relative;
     width: 100%;
     height: 100%;
     pointer-events: none;
+    @include mobile {
+        display: none;
+    }
+
 }
 .grid {
     display: grid;

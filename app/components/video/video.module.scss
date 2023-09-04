@@ -1,9 +1,14 @@
+@import '../../styles/functions';
+
 .video_area {
     height: 130vh;
     width: 100vw;
     background-color: cadetblue;
     position: relative;
     z-index: 0;
+    @include mobile {
+        height: 40vh;
+    }
     .video {
         object-fit: cover;
         width: 100%;

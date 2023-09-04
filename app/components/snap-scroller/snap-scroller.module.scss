@@ -15,6 +15,9 @@
                 font-size:clamp(1.4em, 1.5vw, 5em);
                 line-height:1.4;
                 text-align: left;
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
             h1 {
                 font-size:clamp(2em, 4vw, 6em);
