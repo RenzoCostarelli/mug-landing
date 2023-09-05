@@ -42,7 +42,7 @@ function Botella({ index, z, speed }: ModelProps) {
     // How fast objects spin, randFlost gives us a value between min and max, in this case 8 and 12
     spin: THREE.MathUtils.randFloat(0.5, 1),
     // Some random rotations, Math.PI represents 360 degrees in radian
-    rX: Math.random() * Math.PI * 0.5,
+    rX: Math.random() * Math.PI,
     rZ: Math.random() * Math.PI
   })
 
@@ -51,10 +51,12 @@ function Botella({ index, z, speed }: ModelProps) {
     
     if (ref.current ) {
 
-        if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.x * width * 1.4, (data.y += dt * 0), -z)
-        if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.y * height , (data.x += dt * 0), -z)
+        // if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.x * width * 1.4, (data.y += dt * 1.1), -z)
+        // if (dt < 0.1) ref.current.position.set(index === 0 ? 0 : data.x * width, (data.x += dt * 0), -z)
+        ref.current.position.x = Math.cos(state.clock.getElapsedTime() * speed) * z;
+        ref.current.position.z = Math.sin(state.clock.getElapsedTime() * speed) * z;
         // Rotate the object around
-        ref.current.rotation.set((data.rX += dt / data.spin), Math.sin(index * 50 + state.clock.elapsedTime / 10) * Math.PI, (data.rZ += dt / data.spin))
+        // ref.current.rotation.set((data.rX += dt / data.spin), Math.sin(index * 30 + state.clock.elapsedTime / 10) * Math.PI, (data.rZ += dt / data.spin))
         // If they're too far up, set them back to the bottom
         // if (data.y > height * (index === 0 ? 2 : 1)) data.y = -(height * (index === 0 ? 2 : 1))
     }
@@ -70,9 +72,9 @@ function Botella({ index, z, speed }: ModelProps) {
   )
 }
 
-export default function Botellas({ speed = 0.1, count = 5, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 1.2)) }) {
+export default function Botellas({ speed = 0.1, count = 15, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 1.2)) }) {
   return <>
     {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
-    {Array.from({ length: count }, (_, i) => <Botella key={i} index={i} z={2} speed={speed} /> /* prettier-ignore */)}
+    {Array.from({ length: count }, (_, i) => <Botella key={i} index={i} z={2} speed={speed}/> /* prettier-ignore */)}
   </>
 }

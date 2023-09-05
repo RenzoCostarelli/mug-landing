@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.2.3 mug.glb --types
 
 import * as THREE from 'three'
 import React, { useRef } from 'react'
-import { Center, Environment, useGLTF, useMatcapTexture } from '@react-three/drei'
+import { Center, Environment, MeshTransmissionMaterial, useGLTF, useMatcapTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useControls } from 'leva'
 import { Physics, RigidBody } from '@react-three/rapier'
@@ -40,30 +40,35 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   
   const { nodes, materials } = useGLTF('./model/mug.glb') as GLTFResult;
 
-  const materialProps = {
-    thickness: 1,
-    roughness: 0.3,
-    clearcoat: 0.4,
-    clearcoatRoughness: 0,
-    transmission: 1,
-    ior: 1.50,
-    envMapIntensity: 10,
-    color: '#ffffff',
-    attenuationTint: '#ffe79e',
-    attenuationDistance: 0.40
-  }
   // const envProps = useControls({ background: false })
   const envProps = {background: false}
-  const [ matcapTexture ] = useMatcapTexture('7B5254_E9DCC7_B19986_C8AC91', 256)
   return (
     <Center>
       <group {...props} dispose={null} position={[0, 0, 0]}>        
-            <RigidBody>
+            {/* <RigidBody>
               <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
                 <meshPhysicalMaterial {...materialProps} />
               </mesh>              
-            </RigidBody>
-        
+            </RigidBody> */}
+            <RigidBody type='fixed'>
+              <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
+              <MeshTransmissionMaterial
+              backside
+              backsideThickness={4}
+              thickness={3}
+              chromaticAberration={0.5}
+              anisotropicBlur={0.05}
+              iridescence={1}
+              iridescenceIOR={1}
+              iridescenceThicknessRange={[0, 1400]}
+              clearcoatRoughness={0}
+              clearcoat={1}
+              envMapIntensity={1} 
+              distortionScale={0} 
+              temporalDistortion={0}                
+              />
+              </mesh>              
+            </RigidBody>        
         <Environment {...envProps} files="./adams_place_bridge_1k.hdr" />
       </group>
     </Center>

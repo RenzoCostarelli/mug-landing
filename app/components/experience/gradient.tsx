@@ -34,7 +34,7 @@ export default function Gradient() {
 
   return (
     <mesh ref={mesh} position={[0, 0, -3]} scale={1}>
-      <planeGeometry args={[15, 15, 32, 32]} />
+      <planeGeometry args={[25, 25, 32, 32]} />
       <shaderMaterial
         fragmentShader={fragmentShader}
         vertexShader={vertexShader}

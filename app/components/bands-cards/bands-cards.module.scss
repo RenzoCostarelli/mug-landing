@@ -43,7 +43,7 @@
     max-width: 1600px;
     margin-inline: auto;
     @include mobile {
-        padding: 1rem 0rems;
+        padding: 1rem 0rem;
     }
 }
 
@@ -72,6 +72,10 @@
         padding: 0.5rem;
         transition: border-radius 200ms linear;
         will-change: width;
+        @include mobile {
+            height: 120px;
+            width: 120px;
+        }
     }
     .card_info {
         flex-direction: column;
@@ -84,9 +88,11 @@
           font-weight: bold;
           word-break: keep-all;
           white-space: nowrap;
-          font-size: 1.2rem;
-          transform: translateY(2rem);
           transition: transform 200ms linear;
+          @include desktop {
+            font-size: 1.2rem;          
+            transform: translateY(2rem);
+          }
         }
     }
     .purchase_button {
@@ -95,10 +101,9 @@
         border-radius: 1rem;
         padding: 0.5rem 2rem;
         font-weight: bold;
-        opacity: 0;
         transition: opacity 200ms linear;
-        &:hover {
-            // box-shadow: 2px 2px purple;
+        @include desktop {
+            opacity: 0;
         }
     }
     .play_icon {
