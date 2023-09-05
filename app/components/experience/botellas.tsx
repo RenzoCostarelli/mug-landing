@@ -36,13 +36,13 @@ function Botella({ index, z, speed }: ModelProps) {
   // Local component state, it is safe to mutate because it's fixed data
   const [data] = useState({
     // Randomly distributing the objects along the vertical
-    y: THREE.MathUtils.randFloatSpread(height * 0.5),
+    y: THREE.MathUtils.randFloatSpread(height * 0.9),
     // This gives us a random value between -1 and 1, we will multiply it with the viewport width
     x: THREE.MathUtils.randFloatSpread(1.1),
     // How fast objects spin, randFlost gives us a value between min and max, in this case 8 and 12
     spin: THREE.MathUtils.randFloat(0.5, 1),
     // Some random rotations, Math.PI represents 360 degrees in radian
-    rX: Math.random() * Math.PI,
+    rX: Math.random() * Math.PI * 0.5,
     rZ: Math.random() * Math.PI
   })
 
@@ -70,7 +70,7 @@ function Botella({ index, z, speed }: ModelProps) {
   )
 }
 
-export default function Botellas({ speed = 0.1, count = 20, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 1.2)) }) {
+export default function Botellas({ speed = 0.1, count = 5, depth = 1, easing = (x: any) => Math.sqrt(1 - Math.pow(x - 1, 1.2)) }) {
   return <>
     {/* Using cubic easing here to spread out objects a little more interestingly, i wanted a sole big object up front ... */}
     {Array.from({ length: count }, (_, i) => <Botella key={i} index={i} z={2} speed={speed} /> /* prettier-ignore */)}

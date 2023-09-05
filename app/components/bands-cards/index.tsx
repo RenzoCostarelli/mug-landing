@@ -86,7 +86,7 @@ const dummyData: Band[] = [
             </div>
             <div className={s.card_info}>
               <h2 className={s.title}>{title}</h2>
-              <a className={s.purchase_button} href={link_url}>Escuchar</a>
+              <div className={s.purchase_button}>Escuchar</div>
               <div className={s.play_icon}>
                 <svg viewBox="-3 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" className={s.svg}>
                     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

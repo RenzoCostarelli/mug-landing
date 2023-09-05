@@ -1,4 +1,4 @@
-import { Center } from '@react-three/drei'
+import { Center, OrbitControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { Physics } from '@react-three/rapier'
 import { Model } from './Mug'
@@ -11,7 +11,7 @@ import Loader from './Loader'
 export default function Experience() {
       return <>
         {/* <Perf position="top-left" /> */}
-        {/* <OrbitControls makeDefault enableZoom={false}/> */}
+        <OrbitControls makeDefault enableZoom={false}/>
         <Suspense fallback={<Loader />}>
         <ambientLight intensity={0.4} /> 
         <Gradient />
