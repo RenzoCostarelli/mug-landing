@@ -62,6 +62,7 @@
     -webkit-backdrop-filter: blur(7px);
     padding: 0.5rem;
     position: relative;
+    transition: box-shadow 200ms linear;
     cursor: pointer;
     .card_picture {
         height: 180px;
@@ -115,6 +116,7 @@
         }
     }
     &:hover {
+        box-shadow: 0 0 20px 0px #6594b066;
         .title {
             transform: translateY(0);
         }
