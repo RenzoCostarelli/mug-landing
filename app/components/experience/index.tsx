@@ -11,12 +11,12 @@ import Loader from './Loader'
 import { useFrame } from '@react-three/fiber'
 
 export default function Experience() {
-      useFrame((state, delta) => {
-        easing.damp3(state.camera.position, [-state.pointer.x / 2, -state.pointer.y / 2, 5], 0.25, delta)
-      })
+      // useFrame((state, delta) => {
+      //   easing.damp3(state.camera.position, [-state.pointer.x / 2, -state.pointer.y / 2, 5], 0.25, delta)
+      // })
       return <>
         {/* <Perf position="top-left" /> */}
-        <OrbitControls makeDefault enableZoom={false} enableRotate={false}/>
+        {/* <OrbitControls makeDefault enableZoom={false} enableRotate={false}/> */}
         <Suspense fallback={<Loader />}>
         <ambientLight intensity={0.4} /> 
         <Gradient />
