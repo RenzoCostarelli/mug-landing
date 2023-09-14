@@ -56,7 +56,7 @@ export default function SnapScroller () {
                         <div className={`${s.desktop_content_section} text_area`}>
                             <div className={`${s.mobile_image}`}>
                                 <Image
-                                    src="/images/mug1.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug1_f3wawg.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -73,7 +73,7 @@ export default function SnapScroller () {
                         <div className={`${s.desktop_content_section} text_area`}>
                             <div className={`${s.mobile_image}`}>
                                 <Image
-                                    src="/images/mug2.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug2_p472wp.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -88,7 +88,7 @@ export default function SnapScroller () {
                         <div className={`${s.desktop_content_section} text_area`}>
                             <div className={`${s.mobile_image}`}>
                                 <Image
-                                    src="/images/mug3.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3_b4j3sa.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -106,7 +106,7 @@ export default function SnapScroller () {
                     <div className={`${s.desktop_photos}`}>
                         <div className={`${s.box} ${s.red} desktop_photo`} ref={boxRef}>
                             <Image
-                                src="/images/mug1blur.jpg"
+                                src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug1blur_iaxune.jpg"
                                 alt="Mug team"
                                 fill
                                 className={`${s.background_image}`}
@@ -116,7 +116,7 @@ export default function SnapScroller () {
                             />
                             <div className={`${s.inner_image} inner_img`}>
                                 <Image
-                                    src="/images/mug1.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug1_f3wawg.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -128,7 +128,7 @@ export default function SnapScroller () {
                         </div>
                         <div className={`${s.box} ${s.green} desktop_photo`} ref={boxRef}>
                             <Image
-                                src="/images/mug2blur.jpg"
+                                src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715759/mug2blur_ggky4p.jpg"
                                 alt="Mug team"
                                 fill
                                 className={`${s.background_image}`}
@@ -138,7 +138,7 @@ export default function SnapScroller () {
                             />
                           <div className={`${s.inner_image} inner_img`}>
                                 <Image
-                                    src="/images/mug2.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug2_p472wp.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -150,7 +150,7 @@ export default function SnapScroller () {
                         </div>
                         <div className={`${s.box} ${s.pink} desktop_photo`} ref={boxRef}>
                             <Image
-                                src="/images/mug3blur.jpg"
+                                src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3blur_n2xiqf.jpg"
                                 alt="Mug team"
                                 fill
                                 className={`${s.background_image}`}
@@ -160,7 +160,7 @@ export default function SnapScroller () {
                             />
                             <div className={`${s.inner_image} inner_img`}>
                                 <Image
-                                    src="/images/mug3.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug3_b4j3sa.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"
@@ -172,7 +172,7 @@ export default function SnapScroller () {
                         </div>
                         <div className={`${s.box} ${s.blue} desktop_photo`} ref={boxRef}>
                             <Image
-                                src="/images/mug4blur.jpg"
+                                src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715760/mug4blur_nuuzzo.jpg"
                                 alt="Mug team"
                                 fill
                                 // sizes="100vw"
@@ -183,7 +183,7 @@ export default function SnapScroller () {
                             />
                             <div className={`${s.inner_image} inner_img`}>
                                 <Image
-                                    src="/images/mug4.jpg"
+                                    src="https://res.cloudinary.com/dkgnaegp9/image/upload/v1694715761/mug4_ex8yjc.jpg"
                                     alt="Mug team"
                                     fill
                                     // sizes="100vw"

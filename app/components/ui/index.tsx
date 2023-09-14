@@ -54,7 +54,8 @@ export default function UI ({text1, text2, text3}: TitleProps) {
                             <g>
                                 <use xlinkHref="#circlePath" fill="none"/>
                                 <text fill="#fff">
-                                    <textPath xlinkHref="#circlePath">Esta es la web del MUG La web del MUG  + + + + </textPath>
+                                    {/* <textPath xlinkHref="#circlePath">Esta es la web del MUG La web del MUG  + + + + </textPath> */}
+                                    <textPath xlinkHref="#circlePath">La unión es Movimiento y el Movimiento es groove +</textPath>
                                 </text>
                             </g>
                         </svg>

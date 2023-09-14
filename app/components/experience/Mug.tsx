@@ -5,7 +5,7 @@ Command: npx gltfjsx@6.2.3 mug.glb --types
 
 import * as THREE from 'three'
 import React, { useRef } from 'react'
-import { Center, Environment, MeshTransmissionMaterial, useGLTF, useMatcapTexture } from '@react-three/drei'
+import { Center, Cloud, Environment, MeshTransmissionMaterial, useGLTF, useMatcapTexture } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { useControls } from 'leva'
 import { Physics, RigidBody } from '@react-three/rapier'
@@ -45,11 +45,6 @@ export function Model(props: JSX.IntrinsicElements['group']) {
   return (
     <Center>
       <group {...props} dispose={null} position={[0, 0, 0]}>        
-            {/* <RigidBody>
-              <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
-                <meshPhysicalMaterial {...materialProps} />
-              </mesh>              
-            </RigidBody> */}
             <RigidBody type='fixed'>
               <mesh geometry={nodes.Curve.geometry} rotation={[1.571, 0, 0]} scale={0.7} ref={logoRef}>
               <MeshTransmissionMaterial
@@ -68,7 +63,7 @@ export function Model(props: JSX.IntrinsicElements['group']) {
               temporalDistortion={0}                
               />
               </mesh>              
-            </RigidBody>        
+            </RigidBody>    
         <Environment {...envProps} files="./adams_place_bridge_1k.hdr" />
       </group>
     </Center>
