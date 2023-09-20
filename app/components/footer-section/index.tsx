@@ -33,7 +33,7 @@ export default function FooterSection() {
                     <h1>Nos encontras en</h1>
                     <div className={s.social_network_logos}>
                         {redes.map((red) => (
-                            <div className={s.logo_container}>
+                            <div className={s.logo_container} key={red.alt}>
                                 <Image src={red.src} alt={s.alt} fill/>
                             </div>
                         ))}
