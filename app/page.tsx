@@ -9,6 +9,7 @@ import MarqueeScroller from './components/marquee-scroller'
 import Bands from './components/bands-cards'
 import UI from './components/ui'
 import { useEffect, useState } from 'react'
+import FooterSection from './components/footer-section'
 export default function Home() {
   const [title1, setTitle1] = useState<string>('La web del Mug')
   useEffect(() => {
@@ -49,7 +50,9 @@ export default function Home() {
       <section className={`${s.bands_section} full-width`} data-title="Bandas">
         <Bands />
       </section>
-      <section className='h100' style={{backgroundColor: 'white'}}></section>
+      <section className={`${s.footer_section} h100 full-width`} data-title="Contacto">
+        <FooterSection />
+      </section>
     </main>
     </>
   )
